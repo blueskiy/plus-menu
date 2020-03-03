@@ -1,0 +1,90 @@
+*,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: radial-gradient(
+    circle 360px at 50% 50%,
+    rgb(150, 182, 240) 0%,
+    rgb(118, 129, 177) 100.2%
+  );
+  height: 100vh;
+  display: flex;
+  padding-bottom: 15px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.div1 {
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  background: #3273dc;
+}
+
+.div2 {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  bottom: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background: #3273dc;
+  transition: all 225ms ease-in-out;
+}
+
+.plus,
+.plus2,
+.plus3,
+.plus4 {
+  top: 28px;
+  left: 15px;
+  width: 30px;
+  height: 5px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+  transition: 225ms ease-in-out;
+}
+
+.plus:before,
+.plus2:before,
+.plus3:before,
+.plus4:before {
+  width: 100%;
+  content: '';
+  height: 100%;
+  display: block;
+  background: #fff;
+  border-radius: 2px;
+  transform: rotate(90deg);
+}
+
+input {
+  display: none;
+}
+
+input:checked ~ label .plus {
+  transform: rotate(45deg);
+}
+
+input:checked ~ div {
+  height: 200px;
+  border-radius: 35px;
+}
+
+input:checked ~ div .plus3 {
+  top: 68px;
+}
+
+input:checked ~ div .plus4 {
+  top: 108px;
+}
